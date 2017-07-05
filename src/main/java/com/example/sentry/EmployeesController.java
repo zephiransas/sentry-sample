@@ -17,7 +17,7 @@ public class EmployeesController {
 
     @GetMapping
     public String list(Model model) {
-        log.info("employee index is called");
+        log.warn("employee index is called");
         model.addAttribute("employees", repository.findAll());
         return "employees/list";
     }
