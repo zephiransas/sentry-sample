@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="jp"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head></head>
+
+<body th:inline="text">
+    <div>[[${employees.size()}]]</div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+        </tr>
+        </thead>
+
+        <tbody th:each="employee : ${employees}">
+        <tr>
+            <td>[[${employee.id}]]</td>
+            <td>[[${employee.name}]]</td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
