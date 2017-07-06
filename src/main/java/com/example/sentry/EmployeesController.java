@@ -30,6 +30,8 @@ public class EmployeesController {
     public String edit(@PathVariable("id") int id,
                        @ModelAttribute("form") EmployeeForm form) {
         Employee employee = repository.findOne(id);
+        if(employee == null) return "redirect:/employees";
+
         form.setId(employee.getId());
         form.setName(employee.getName());
         form.setEmail(employee.getEmail());
