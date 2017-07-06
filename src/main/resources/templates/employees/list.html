@@ -5,7 +5,7 @@
 <head></head>
 
 <body th:inline="text">
-    <div>[[${employees.size()}]]</div>
+    <a th:href="@{employees/new}">new</a>
 
     <table>
         <thead>
@@ -18,7 +18,11 @@
         <tbody th:each="employee : ${employees}">
         <tr>
             <td>[[${employee.id}]]</td>
-            <td>[[${employee.name}]]</td>
+            <td>
+                <a th:href="@{|/employees/${employee.id}/edit|}">
+                    [[${employee.name}]]
+                </a>
+            </td>
         </tr>
         </tbody>
     </table>
